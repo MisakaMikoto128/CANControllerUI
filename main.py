@@ -260,9 +260,9 @@ class MainWindow(QFrame, Ui_Form):
                     elif can_msg.can_id == 0x1AB0100A:
                         self.canController_info.Temperature = int.from_bytes(can_msg.data[0:1], 'big')
                     elif can_msg.can_id == 0x1AB0100B:
-                        self.canController_info.MaxChargerCurr = int.from_bytes(can_msg.data[0:2], 'big')
-                        self.canController_info.MaxChargerVolt = int.from_bytes(can_msg.data[2:4], 'big')
-                        self.canController_info.MaxChargePower = int.from_bytes(can_msg.data[4:6], 'big')
+                        self.canController_info.MaxChargerVolt = 500#int.from_bytes(can_msg.data[0:2], 'big')
+                        self.canController_info.MaxChargerCurr = 60#int.from_bytes(can_msg.data[2:4], 'big')
+                        self.canController_info.MaxChargePower = 30000#int.from_bytes(can_msg.data[4:6], 'big')
 
                     elif can_msg.can_id == 0x1AB0210:
                         if not BMS_210h_t_Decode(can_msg.data, self.bms_210h):

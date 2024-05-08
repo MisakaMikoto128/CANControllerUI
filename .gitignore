@@ -3,3 +3,4 @@
 /test.py
 /main.spec
 /.idea/
+__pycache__/*
